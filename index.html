@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>
+     Venn
+    </title>
+    <link rel="stylesheet" href="./lib/css/flipclock.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css" />
+
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+		<script src="./lib/js/flipclock.js"></script>
+  </head>
+  <style type="text/css">
+    @font-face {
+    font-family: 'primelight';
+    src: url('prime_light-webfont.eot');
+    src: url('prime_light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('prime_light-webfont.woff') format('woff'),
+         url('prime_light-webfont.ttf') format('truetype'),
+         url('prime_light-webfont.svg#primelight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+    body {
+        font-family: "primelight", Verdana, Tahoma;
+        margin:0px;padding:0px;
+
+    }
+    ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    /*background-color: #ededed;*/
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: black !important;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+ul #link1 a:hover:not(.active) {
+    background-color: #cb1b6f;
+}
+ul #link2 a:hover:not(.active) {
+    background-color: #ffd000;
+}
+ul #link3 a:hover:not(.active) {
+    background-color: #1b64b0;
+}
+ul #link4 a:hover:not(.active) {
+    background-color: #6f449a;
+}
+
+.active {
+    background-color: #4CAF50;
+}
+
+.banner-container{
+  background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+                rgba(0,0,0,0.55) url('./img/web-banner-1.jpg') no-repeat center;
+    background-size: 1340px 390px;
+    height:60%;
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+    text-rendering: optimizeLegibility;
+}
+
+.clock-container h1{
+  color: #396;
+  font-weight: 100;
+  font-size: 40px;
+  margin: 40px 0px 20px;
+}
+
+
+.smalltext{
+    padding-top: 5px;
+    font-size: 16px;
+}
+input[type="text"] {
+  display: block;
+  margin: 0;
+  width: 100%;
+  font-family: sans-serif;
+  font-size: 18px;
+  appearance: none;
+  box-shadow: none;
+  border-radius: none;
+}
+input[type="text"]:focus {
+  outline: none;
+}
+.style-1 input[type="text"] {
+  padding: 4px;
+  border: solid 1px #dcdcdc;
+  transition: box-shadow 0.3s, border 0.3s;
+}
+.style-1 input[type="text"]:focus,
+.style-1 input[type="text"].focus {
+  border: solid 1px #707070;
+  box-shadow: 0 0 5px 1px #969696;
+}
+.flip-clock-wrapper ul {
+  position: relative;
+  float: left;
+  margin: 5px;
+  width: 54px;
+  height: 80px;
+  font-size: 23px;
+  font-weight: bold;
+  line-height: 87px;
+  border-radius: 6px;
+  background: #000;
+}
+
+
+    </style>
+  <body style="overflow-x: hidden;">
+    <div class="background-container" style="background:#ffffff;height:650px; ">
+      <div class="header-container" style="height:13%">
+        <div class="" style="float:left;margin-top:0.6%;margin-left:1%">
+          <a href="./index.html">
+            <img src="./img/venn-logo-horizontal.png" alt="" style="height:70px" ></a>
+        </div>
+        <!-- <div class="" style="float:left;margin-top:1%;margin-left:1%">
+            <img src="./img/venn-finaltext.png" alt="" style="height:70px" >
+        </div> -->
+
+        <div class="navbar-container" style="float:right;margin-top: 1.3%;margin-right: 4%;">
+          <ul style="color:#000 !important;">
+            <li id="link1"><a class="" href="./index.html">Home</a></li>
+            <li id="link2"><a href="./about-us.html">About</a></li>
+            <li id="link3"><a href="./contact.html">Contact</a></li>
+            <li id="link4"><a href="./index.html">FAQ</a></li>
+          </ul>
+        </div>
+
+        <!-- <div style="float:left"><p style="font-size:25px">VENN</p></div> -->
+      </div>
+
+      <div class="banner-container">
+        <div class="text-container" style="margin:0;padding:0 ">
+          <p style="margin:0;padding:0;text-transform::uppercase;font-size:80px; line-height: 375px;">COMING SOON</p>
+        </div>
+      </div>
+
+      <div class="email-reg-container" style="height:50%">
+        <div class="input-container" style="margin-left:37%;margin-top:2%">
+                  <!-- <h2>Email ID</h2> -->
+                  <p style="font-size:40px;margin-left:2.7%">Apply for Beta</p>
+          <ul class="input-list style-1 clearfix">
+            <li >
+              <input type="text" placeholder="you@email.com" id = "input_emai">
+            </li>
+            <li style="display: none; margin-left:9%" id="submitconfirm">
+              <p style="">Thanks For Applying !!!</p>
+            </li>
+            <li>
+              <button id = "input_btn" type="submit"  style="height: 35px; width: 103px"; onclick="sendemail()">Apply</button>
+            </li>
+
+
+          </ul>
+        </div>
+        <!-- <div class="clock-container row" style="margin-left:25%;">
+
+            <div class="clock" style=" margin-top: 10%;"></div>
+        </div> -->
+      </div>
+      <footer style =" background:#f26721;height:30%;clear: both;position: relative;z-index: 10;">
+        <div class="" style="float:left;margin-top:2%;margin-left:1%">
+            <img src="./img/venn-logo-horizontal.png" alt="" style="height:70px" >
+            <div class="" style="margin-left:4%">
+            <p style="color:#fff;font-size:12px">Venn Think Labs &#169 2016</p>
+            </div>
+        </div>
+        <div class="" style="float:left;margin-left:10%;margin-top:2%">
+          <p style="color:#fff;padding:0;margin:0;font-weight:200;">Venn</p>
+
+          <div class="" style="padding:3px;padding-left:1px;margin-top:10%">
+  					<a target="_blank"  href="./about-us.html" style="text-decoration:none;color:#fff;"> About Us</a>
+  				</div>
+  				<div class="" style="padding:3px;padding-left:1px;">
+  					<a target="_blank"  href="./contact.html" style="text-decoration:none;color:#fff" >Contact</a>
+  				</div>
+  				<div class="" style="padding:3px;padding-left:1px;">
+  					<a target="_blank"  href="./index.html" style="text-decoration:none;color:#fff">FAQ</a>
+  				</div>
+        </div>
+        <div class="" style="float:left;margin-left:10%;margin-top:2%">
+          <p style="color:#fff;padding:0;margin:0;font-weight:200">Social</p>
+
+          <div class="" style="padding:3px">
+            <a target="_blank" title="follow me on fb" href="https://www.facebook.com/meetvenn/"><img alt="follow me on facebook" src="./img/fb-logo-v1.png" border=0></a>
+          </div>
+          <div class="" style="padding:3px;margin-left:7%">
+            <a target="_blank" title="follow me on insta" href="https://www.instagram.com/meetvennapp"><img alt="follow me on instagram" src="./img/insta-logo-v1.png" border=0></a>
+          </div>
+          <div class="" style="padding:3px">
+            <a target="_blank" title="follow me on twitter" href="http://www.twitter.com/meetvennapp"><img alt="follow me on twitter" src="./img/tweet-logo.png" border=0></a>
+          </div>
+        </div>
+
+      </footer>
+    </div>
+
+  </body>
+  <script type="text/javascript">
+  var clock;
+
+  $(document).ready(function() {
+
+    // Grab the current date
+    var currentDate = new Date();
+
+    // Set some date in the future. In this case, it's always Jan 1
+    var futureDate  = new Date(currentDate.getFullYear() + 1, 0, 1);
+
+    // Calculate the difference in seconds between the future and current date
+    var diff = futureDate.getTime() / 1000 - currentDate.getTime() / 1000;
+
+    // Instantiate a coutdown FlipClock
+    clock = $('.clock').FlipClock(diff, {
+      clockFace: 'DailyCounter',
+      countdown: true
+    });
+  });
+
+  function sendemail(){
+
+      // event.preventDefault();
+      var sendata = {};
+      var mydata = $('#input_emai').val();
+      sendata['data'] = mydata;
+      var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://crm.mrhomecare.net/service/submitemail",
+    "method": "POST",
+    "headers": {
+      "content-type": "application/x-www-form-urlencoded",
+    },
+    "data": {
+      "data": mydata
+    }
+  }
+
+    $.ajax(settings).done(function (response) {
+      console.log(response);
+
+      $("#submitconfirm").css({'display':'block'})
+      $("#input_emai").hide();
+      $("#input_btn").hide();
+
+    });
+
+  }
+
+//   function getTimeRemaining(endtime) {
+//   var t = Date.parse(endtime) - Date.parse(new Date());
+//   var seconds = Math.floor((t / 1000) % 60);
+//   var minutes = Math.floor((t / 1000 / 60) % 60);
+//   var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+//   var days = Math.floor(t / (1000 * 60 * 60 * 24));
+//   return {
+//     'total': t,
+//     'days': days,
+//     'hours': hours,
+//     'minutes': minutes,
+//     'seconds': seconds
+//   };
+// }
+//
+// function initializeClock(id, endtime) {
+//   var clock = document.getElementById(id);
+//   var daysSpan = clock.querySelector('.days');
+//   var hoursSpan = clock.querySelector('.hours');
+//   var minutesSpan = clock.querySelector('.minutes');
+//   var secondsSpan = clock.querySelector('.seconds');
+//
+//   function updateClock() {
+//     var t = getTimeRemaining(endtime);
+//
+//     daysSpan.innerHTML = t.days;
+//     hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+//     minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+//     secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+//
+//     if (t.total <= 0) {
+//       clearInterval(timeinterval);
+//     }
+//   }
+//
+//   updateClock();
+//   var timeinterval = setInterval(updateClock, 1000);
+// }
+//
+// var deadline = new Date(Date.parse(new Date()) + 15 * 24 * 60 * 60 * 1000);
+// initializeClock('clockdiv', deadline);
+  </script>
+</html>
